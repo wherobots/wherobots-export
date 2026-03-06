@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wherobots-export"
+version = "0.1.0"
+description = "Utilities for exporting PyTorch models for Wherobots workflows"
+readme = "README.md"
+requires-python = "==3.12.*"
+authors = [
+  { name = "Ryan Avery", email = "ryan@wherobots.com" },
+]
+classifiers = [ "Programming Language :: Python :: 3 :: Only", "Programming Language :: Python :: 3.12" ]
+dependencies = [
+  "torch>=2.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/rbavery/wherobots-export"
+Repository = "https://github.com/rbavery/wherobots-export"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["wherobots_export*"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
